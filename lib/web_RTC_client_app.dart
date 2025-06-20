@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:nomad_codes_project/authentificationView/View/auth_checker_view.dart';
+import 'package:nomad_codes_project/authentification/authChecker/auth_checker_view.dart';
 
 class webRtcClientApp extends StatelessWidget {
   const webRtcClientApp({super.key});

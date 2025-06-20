@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:nomad_codes_project/homeView/ViewModel/dialer_viewModel.dart';
+import 'package:nomad_codes_project/home/pages/dialler_page/dialer_viewModel.dart';
+import 'package:nomad_codes_project/home/callScreen/callScreen_viewModel.dart';
+import 'package:nomad_codes_project/home/callScreen/callScreen_view.dart';
+
 
 class DialerPage extends ConsumerWidget {
   const DialerPage({super.key});
@@ -8,7 +11,8 @@ class DialerPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final number = ref.watch(dialerProvider);
-    final vm     = ref.read(dialerProvider.notifier);
+    final vm = ref.read(dialerProvider.notifier);
+    final callVM = ref.read(callProvider.notifier);
 
     return Scaffold(
       appBar: AppBar(
@@ -30,6 +34,7 @@ class DialerPage extends ConsumerWidget {
                 ),
                 child: Text(
                   number.isEmpty ? 'Введите номер' : number,
+                  maxLines: 1,
                   textAlign: TextAlign.center,
                   style: const TextStyle(fontSize: 28),
                 ),
@@ -76,7 +81,17 @@ class DialerPage extends ConsumerWidget {
                   ),
 
                   ElevatedButton(
-                    onPressed: number.isEmpty ? null : vm.call,
+                    onPressed: number.isEmpty
+                        ? null
+                        : () {
+                      callVM.startCall(number);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => CallScreen(number: number),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: const CircleBorder(),
                       padding: const EdgeInsets.all(20),

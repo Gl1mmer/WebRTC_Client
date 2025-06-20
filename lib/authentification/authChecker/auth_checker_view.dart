@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:nomad_codes_project/authentificationView/View/login_view.dart';
-import 'package:nomad_codes_project/homeView/View/home_view.dart';
+import 'package:nomad_codes_project/authentification/login/login_view.dart';
+import 'package:nomad_codes_project/home/home_view.dart';
 
-import '../ViewModel/auth_view_model.dart';
+import 'auth_view_model.dart';
 
 
 class AuthCheckerView extends ConsumerWidget {

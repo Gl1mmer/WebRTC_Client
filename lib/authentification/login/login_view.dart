@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../ViewModel/auth_view_model.dart';
+import '../authChecker/auth_view_model.dart';
 
 class LoginView extends ConsumerWidget {
   const LoginView({super.key});

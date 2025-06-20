@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:nomad_codes_project/homeView/ViewModel/pages_viewModel.dart';
-import 'pages/view.dart';
+import 'package:nomad_codes_project/home/mainScreen/mainScreen_viewModel.dart';
+import 'package:nomad_codes_project/home/pages/view.dart';
 
 
 class MainScreen extends ConsumerWidget {
